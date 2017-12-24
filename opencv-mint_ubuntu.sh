@@ -4,8 +4,8 @@
 # http://opencv.org/
 
 # If the latest version > opencv-3.0.0-rc1 you must change the following variables
-LINK="https://github.com/Itseez/opencv/archive/3.0.0-rc1.zip" #link to download opencv
-FILE_NAME="opencv-3.0.0-rc1.zip" #Name of the file
+LINK="https://github.com/Itseez/opencv/archive/3.3.1.zip" #link to download opencv
+FILE_NAME="opencv-3.3.1.zip" #Name of the file
 FILE_LENGTH=`expr length $FILE_NAME`
 FILE_LENGTH=$((FILE_LENGTH-4))
 DIRECTORY_NAME=${FILE_NAME%%.zip*} #It's just the FILE_NAME without the .zip
@@ -20,7 +20,38 @@ sudo apt-get upgrade
 echo " **** Dependencies installation **** "
  
 sudo apt-get -y install libopencv-dev build-essential cmake git libgtk2.0-dev pkg-config python-dev python-numpy libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff4-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev libxine-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev libtbb-dev libqt4-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev x264 v4l-utils unzip qt-creator
- 
+sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+sudo apt-get install libxvidcore-dev libx264-dev
+sudo apt-get install libgtk-3-dev
+sudo apt-get install libhdf5-serial-dev graphviz
+sudo apt-get install libopenblas-dev libatlas-base-dev gfortran
+sudo apt-get install python-tk python3-tk python-imaging-tk
+sudo apt-get install python2.7-dev python3-dev
+
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python get-pip.py
+sudo python3 get-pip.py
+sudo pip install virtualenv virtualenvwrapper
+sudo rm -rf ~/.cache/pip get-pip.py
+
+# virtualenv and virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source /usr/local/bin/virtualenvwrapper.sh
+
+echo -e "\n# virtualenv and virtualenvwrapper" >> ~/.bashrc
+echo "export WORKON_HOME=$HOME/.virtualenvs" >> ~/.bashrc
+echo "export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3" >> ~/.bashrc
+echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc
+source ~/.bashrc
+
+
+mkvirtualenv dl4cv -p python3
+workon dl4cv
+pip install numpy
+cd ~
+
 # Define a constant
 FOLDER_NAME="opencv"
  

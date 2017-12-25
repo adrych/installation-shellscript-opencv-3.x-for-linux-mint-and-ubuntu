@@ -20,7 +20,10 @@ sudo apt-get update
 sudo apt-get upgrade
 
 echo " **** Dependencies installation **** "
- 
+
+wget http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb
+sudo dpkg -i libpng12-0_1.2.54-1ubuntu1_amd64.deb
+
 sudo apt-get -y install libopencv-dev build-essential cmake git libgtk2.0-dev pkg-config python-dev python-numpy libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff4-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev libxine-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev libtbb-dev libqt4-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev x264 v4l-utils unzip qt-creator
 sudo apt-get -y install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
 sudo apt-get -y install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
@@ -34,6 +37,15 @@ sudo apt-get -y install python2.7-dev python3-dev
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
 sudo python3 get-pip.py
+
+
+wget http://download.qt.io/official_releases/qt/5.7/5.7.0/qt-opensource-linux-x64-5.7.0.run
+chmod +x qt-opensource-linux-x64-5.7.0.run
+./qt-opensource-linux-x64-5.7.0.run
+sudo apt-get -y install build-essential
+sudo apt-get -y install mesa-common-dev
+sudo apt-get -y install libglu1-mesa-dev -y
+
 
 # virtualenv and virtualenvwrapper
 

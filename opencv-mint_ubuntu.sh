@@ -1,31 +1,4 @@
 #!/bin/bash 
-sudo apt-get remove x264 libx264-dev
- 
-We will Install dependencies now
- 
-sudo apt-get install build-essential checkinstall cmake pkg-config yasm
-sudo apt-get install git gfortran
-sudo apt-get install libjpeg8-dev libjasper-dev libpng12-dev
- 
-# If you are using Ubuntu 14.04
-# sudo apt-get install libtiff4-dev
-# If you are using Ubuntu 16.04
-sudo apt-get install libtiff5-dev
- 
-sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libdc1394-22-dev
-sudo apt-get install libxine2-dev libv4l-dev
-sudo apt-get install libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
-sudo apt-get install qt5-default libgtk2.0-dev libtbb-dev
-sudo apt-get install libatlas-base-dev
-sudo apt-get install libfaac-dev libmp3lame-dev libtheora-dev
-sudo apt-get install libvorbis-dev libxvidcore-dev
-sudo apt-get install libopencore-amrnb-dev libopencore-amrwb-dev
-sudo apt-get install x264 v4l-utils
- 
-# Optional dependencies
-sudo apt-get install libprotobuf-dev protobuf-compiler
-sudo apt-get install libgoogle-glog-dev libgflags-dev
-sudo apt-get install libgphoto2-dev libeigen3-dev libhdf5-dev doxygen#!/bin/bash
 
 # OpenCV 3.x - installation script For Linux Ubuntu 14.04.2 LTS (Trusty Tahr) and Mint 17.1 (Rebecca)
 # http://opencv.org/
@@ -48,8 +21,37 @@ sudo apt-get upgrade
 
 echo " **** Dependencies installation **** "
 
+
 wget http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb
 sudo dpkg -i libpng12-0_1.2.54-1ubuntu1_amd64.deb
+
+sudo apt-get -y remove x264 libx264-dev
+ 
+sudo apt-get -y install build-essential checkinstall cmake pkg-config yasm
+sudo apt-get -y install git gfortran
+sudo apt-get -y install libjpeg8-dev libjasper-dev libpng12-dev
+ 
+# If you are using Ubuntu 14.04
+# sudo apt-get install libtiff4-dev
+# If you are using Ubuntu 16.04
+sudo apt-get -y install libtiff5-dev
+ 
+sudo apt-get -y install libavcodec-dev libavformat-dev libswscale-dev libdc1394-22-dev
+sudo apt-get -y install libxine2-dev libv4l-dev
+sudo apt-get -y install libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
+sudo apt-get -y install qt5-default libgtk2.0-dev libtbb-dev
+sudo apt-get -y install libatlas-base-dev
+sudo apt-get -y install libfaac-dev libmp3lame-dev libtheora-dev
+sudo apt-get -y install libvorbis-dev libxvidcore-dev
+sudo apt-get -y install libopencore-amrnb-dev libopencore-amrwb-dev
+sudo apt-get -y install x264 v4l-utils
+ 
+# Optional dependencies
+sudo apt-get -y install libprotobuf-dev protobuf-compiler
+sudo apt-get -y install libgoogle-glog-dev libgflags-dev
+sudo apt-get -y install libgphoto2-dev libeigen3-dev libhdf5-dev doxygen#!/bin/bash
+
+
 
 sudo apt-get -y install libopencv-dev build-essential cmake git libgtk2.0-dev pkg-config python-dev python-numpy libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff4-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev libxine-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev libtbb-dev libqt4-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev x264 v4l-utils unzip qt-creator
 sudo apt-get -y install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev

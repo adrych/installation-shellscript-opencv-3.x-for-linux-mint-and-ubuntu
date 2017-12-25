@@ -2,6 +2,9 @@
 
 # OpenCV 3.x - installation script For Linux Ubuntu 14.04.2 LTS (Trusty Tahr) and Mint 17.1 (Rebecca)
 # http://opencv.org/
+# https://linuxhint.com/how-to-install-opencv-on-ubuntu/
+# https://www.scivision.co/compiling-opencv3-with-extra-contributed-modules/
+# https://www.learnopencv.com/install-opencv3-on-ubuntu/
 
 # If the latest version > opencv-3.0.0-rc1 you must change the following variables
 LINK="https://github.com/Itseez/opencv/archive/3.3.1.zip" #link to download opencv
@@ -15,12 +18,14 @@ DIRECTORY_NAME=${FILE_NAME%%.zip*} #It's just the FILE_NAME without the .zip
 echo " **** Initialization **** "
 
 echo " **** Update and upgrade the system **** "
+sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
  
 sudo apt-get update
 sudo apt-get upgrade
 
 echo " **** Dependencies installation **** "
 
+sudo apt -y install libjasper1 libjasper-dev
 
 wget http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb
 sudo dpkg -i libpng12-0_1.2.54-1ubuntu1_amd64.deb
